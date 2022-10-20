@@ -11,7 +11,6 @@ ViewController::ViewController(QWidget *parent)
     m_facade = new Facade();
     initializationItemWidget();
     initializationFileWidget();
-    qDebug() << QDir::currentPath();
 }
 
 ViewController::~ViewController() {
@@ -90,6 +89,9 @@ void ViewController::on_itemListView_clicked(const QModelIndex &index) {
 
 void ViewController::on_fileTabWidget_currentChanged(int index) {
     auto item = ui->itemListView->currentIndex().data().toString();
+    if (item.isEmpty()) {
+        return;
+    }
     if (index == Instructions_ID) {
         setInstructionsList(item);
     } else {

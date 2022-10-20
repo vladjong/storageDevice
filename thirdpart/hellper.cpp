@@ -9,7 +9,6 @@ const QString StringWorker::getPathString(const QString& item, Tab_ID id) {
     QString instruction = "instruction/";
     QString txtFormat = ".txt";
     QString path = filePath + instruction + item + txtFormat;
-    qDebug() << path;
     if (id == Instructions_ID) {
         return path;
     } else if (id == Firmware_ID) {
