@@ -4,7 +4,7 @@
 
 const QString StringWorker::getPathString(const QString& item, Tab_ID id) {
 
-    QDir temDir("database/mt_5_can/");
+    QString filePath = "database/mt_5_can/";
     QString firmware = "firmware/";
     QString instruction = "instruction/";
     QString txtFormat = ".txt";
