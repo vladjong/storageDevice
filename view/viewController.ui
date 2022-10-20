@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>811</width>
-    <height>732</height>
+    <width>669</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,56 +15,61 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
-     <widget class="QWidget" name="fileWidget" native="true">
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QTabWidget" name="tabWidget">
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <widget class="QWidget" name="instructionTab">
-          <attribute name="title">
-           <string>инструкции</string>
-          </attribute>
-         </widget>
-         <widget class="QWidget" name="firmwareTab">
-          <attribute name="title">
-           <string>прошивки</string>
-          </attribute>
-         </widget>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="uploadButton">
-         <property name="text">
-          <string>Загрузить файл</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+    <item row="0" column="1" rowspan="2">
+     <widget class="QTabWidget" name="fileTabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="instructionsTab">
+       <attribute name="title">
+        <string>инструкции</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QListView" name="instructionsListView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="firmwareTab">
+       <attribute name="title">
+        <string>прошивки</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QListView" name="firmwareListView"/>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
     <item row="0" column="0">
-     <widget class="QWidget" name="itemWidget" native="true">
+     <widget class="QLabel" name="itemLabel">
       <property name="maximumSize">
        <size>
         <width>250</width>
         <height>16777215</height>
        </size>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="itemLabel">
-         <property name="text">
-          <string>Виджет</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QListWidget" name="itemListWidget"/>
-       </item>
-      </layout>
+      <property name="text">
+       <string>Информация о изделии</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QListView" name="itemListView">
+      <property name="maximumSize">
+       <size>
+        <width>250</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="fileButton">
+      <property name="text">
+       <string>Добавить файл</string>
+      </property>
      </widget>
     </item>
    </layout>
