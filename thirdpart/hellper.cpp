@@ -1,14 +1,19 @@
 #include "hellper.h"
+#include <QDir>
+#include <QDebug>
 
 const QString StringWorker::getPathString(const QString& item, Tab_ID id) {
-    QString filePath = "database/mt_5_can/";
+
+    QDir temDir("database/mt_5_can/");
     QString firmware = "firmware/";
     QString instruction = "instruction/";
     QString txtFormat = ".txt";
+    QString path = filePath + instruction + item + txtFormat;
+    qDebug() << path;
     if (id == Instructions_ID) {
-        return filePath + instruction + item + txtFormat;
+        return path;
     } else if (id == Firmware_ID) {
-        return filePath + firmware + item + txtFormat;
+        return path;
     }
     throw std::invalid_argument("Ошибка: такой формы не существует");
 }

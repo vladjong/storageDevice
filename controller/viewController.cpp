@@ -24,7 +24,7 @@ ViewController::~ViewController() {
 
 void ViewController::initializationItemWidget() {
     setItemModel();
-    auto itemInfoPair = m_facade->getItemInfo("/opt/goinfre/adough/itemStorage/database/mt_5_can/info.txt", Parser_TXT);
+    auto itemInfoPair = m_facade->getItemInfo("database/mt_5_can/info.txt", Parser_TXT);
     if (itemInfoPair.second.isEmpty()) {
         showMessageBox(this, itemInfoPair.first);
         return;

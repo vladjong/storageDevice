@@ -32,6 +32,8 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+Release:RCC_DIR = release/.rcc
+
 DISTFILES += \
     database/mt_5_can/firmware/пайка.txt \
     database/mt_5_can/firmware/проверка.txt \
